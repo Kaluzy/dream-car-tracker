@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Dream Car Tracker — Kalu</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="hero">
+    <div>
+      <p class="eyebrow">Dream Car Tracker SaaS Prototype</p>
+      <h1>Kalu’s next-car watchlist</h1>
+      <p class="lede">Personalized deal monitoring for APR, monthly payment, family space, insurance risk, and trade-in leverage.</p>
+    </div>
+    <div class="hero-card">
+      <span id="lastUpdated">Loading…</span>
+      <strong id="headlineStatus">Checking watchlist</strong>
+      <small>Twice-weekly refresh target: Monday + Thursday</small>
+    </div>
+  </header>
+
+  <main>
+    <section class="controls panel">
+      <div>
+        <label>Credit score</label>
+        <input id="creditScore" type="number" min="300" max="850" step="1" />
+      </div>
+      <div>
+        <label>Trade value</label>
+        <input id="tradeValue" type="number" min="0" step="500" />
+      </div>
+      <div>
+        <label>Cash down</label>
+        <input id="cashDown" type="number" min="0" step="500" />
+      </div>
+      <div>
+        <label>Loan term</label>
+        <select id="loanTerm">
+          <option value="48">48 months</option>
+          <option value="60">60 months</option>
+          <option value="72">72 months</option>
+          <option value="84">84 months</option>
+        </select>
+      </div>
+      <button id="recalculate">Recalculate</button>
+    </section>
+
+    <section class="profile-grid">
+      <article class="metric panel">
+        <span>Payment target</span>
+        <strong id="paymentTarget"></strong>
+        <small>Hard max should stay near $400; stretch max $450 only for exceptional deal.</small>
+      </article>
+      <article class="metric panel">
+        <span>APR rule</span>
+        <strong id="aprRule"></strong>
+        <small>0% ideal. Over 3% is a walk-away signal.</small>
+      </article>
+      <article class="metric panel">
+        <span>Insurance baseline</span>
+        <strong id="insuranceBaseline"></strong>
+        <small>Progressive quote must be checked before deposit/order.</small>
+      </article>
+      <article class="metric panel">
+        <span>Current car</span>
+        <strong id="currentVehicle"></strong>
+        <small>Paid-off trade gives leverage. Do not rush.</small>
+      </article>
+    </section>
+
+    <section class="panel product-angle">
+      <div>
+        <p class="eyebrow">Product thesis</p>
+        <h2>What this could become</h2>
+        <p>A personalized car-buying alert system: user enters credit score, payment ceiling, trade vehicle, insurance baseline, family needs, preferred models, and APR tolerance. The system watches official incentives + dealer market signals and alerts only when a real deal fits.</p>
+      </div>
+      <ul id="marketPatterns"></ul>
+    </section>
+
+    <section class="section-heading">
+      <div>
+        <p class="eyebrow">Watchlist</p>
+        <h2>Ranked vehicles</h2>
+      </div>
+      <div class="legend">
+        <span class="dot green"></span> Buy signal
+        <span class="dot yellow"></span> Watch
+        <span class="dot red"></span> Wait
+      </div>
+    </section>
+
+    <section id="vehicleCards" class="vehicle-grid"></section>
+
+    <section class="panel checklist">
+      <p class="eyebrow">Before any test drive</p>
+      <h2>Required checks</h2>
+      <div class="checklist-grid">
+        <label><input type="checkbox" /> CarMax / Carvana / KBB trade offers collected</label>
+        <label><input type="checkbox" /> Progressive insurance quote for exact VIN/trim</label>
+        <label><input type="checkbox" /> Written out-the-door quote received</label>
+        <label><input type="checkbox" /> Dealer add-ons removed or priced clearly</label>
+        <label><input type="checkbox" /> APR and term confirmed in writing</label>
+        <label><input type="checkbox" /> Payment fits $300–$400 target</label>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <strong>Dream Car Tracker</strong> — prototype for personal use first, SaaS later. Data is a monitored snapshot, not a binding dealer quote.
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
