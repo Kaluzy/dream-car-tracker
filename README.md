@@ -1,11 +1,11 @@
 # Dream Car Tracker
 
-Personalized next-car deal tracker prototype for Kalu.
+Personalized next-car deal tracker prototype for Kaluzy.
 
 ## What it does now
 
 - Dynamic HTML dashboard powered by `data.json` and `app.js`.
-- Tracks preferred vehicles against Kalu's requirements:
+- Tracks preferred vehicles against Kaluzy's requirements:
   - Kia Sportage Hybrid first
   - Tesla Model Y second
   - Kia Sorento Hybrid stretch third
