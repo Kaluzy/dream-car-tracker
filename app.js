@@ -1,5 +1,6 @@
 const money = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 0 });
 const percent = (n) => `${Number(n).toFixed(n % 1 ? 1 : 0)}%`;
+const APP_VERSION = 'eb18e6c';
 
 let state;
 
@@ -128,7 +129,7 @@ function render() {
 }
 
 async function init() {
-  const response = await fetch('data.json', { cache: 'no-store' });
+  const response = await fetch(`data.json?v=${APP_VERSION}`, { cache: 'no-store' });
   state = await response.json();
   document.querySelector('#creditScore').value = state.profile.creditScoreNow;
   document.querySelector('#tradeValue').value = state.profile.tradeValueAssumption;
