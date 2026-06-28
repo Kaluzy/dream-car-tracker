@@ -20,7 +20,7 @@ function aprBadge(vehicle, profile) {
 function creditReadiness(score) {
   if (score >= 720) return ['green', 'Promo-ready'];
   if (score >= 690) return ['yellow', 'Almost there'];
-  return ['red', 'Wait for credit'];
+  return ['yellow', 'Hold: build position'];
 }
 
 function dealScore(vehicle, profile, estPayment) {
@@ -42,6 +42,7 @@ function dealScore(vehicle, profile, estPayment) {
 function statusFromScore(score, vehicle, paymentEstimate, profile) {
   if (vehicle.currentAprBest > 3) return ['red', 'WAIT'];
   if (paymentEstimate > 450) return ['red', 'TOO HIGH'];
+  if (profile.creditScoreNow < 690) return ['yellow', 'HOLD / WATCH'];
   if (score >= 75 && paymentEstimate <= profile.monthlyTargetMax) return ['green', 'BUY SIGNAL'];
   if (score >= 60) return ['yellow', 'WATCH CLOSELY'];
   return ['red', 'WAIT'];
@@ -55,6 +56,7 @@ function render() {
   profile.loanTermMonths = Number(document.querySelector('#loanTerm').value);
 
   document.querySelector('#lastUpdated').textContent = `Snapshot updated ${profile.lastUpdated}`;
+  document.querySelector('#strategySummary').textContent = profile.summary;
   document.querySelector('#paymentTarget').textContent = `${money.format(profile.monthlyTargetMin)}–${money.format(profile.monthlyTargetMax)}/mo`;
   document.querySelector('#aprRule').textContent = `Ideal ${percent(profile.aprIdealMax)}, max ${percent(profile.aprAcceptableMax)}`;
   document.querySelector('#insuranceBaseline').textContent = `${money.format(profile.insuranceBaselineMonthly)}/mo`;
@@ -120,7 +122,8 @@ function render() {
   }).join('');
 
   document.querySelector('#vehicleCards').innerHTML = cards;
-  document.querySelector('#headlineStatus').textContent = `${creditText}: ${profile.creditScoreNow} credit score`;
+  const scoreLabel = profile.creditScoreNow < 690 ? 'mid-600s credit scenario' : `${profile.creditScoreNow} credit score`;
+  document.querySelector('#headlineStatus').textContent = `${creditText}: ${scoreLabel}`;
   document.querySelector('.hero-card').className = `hero-card ${creditClass}`;
 }
 

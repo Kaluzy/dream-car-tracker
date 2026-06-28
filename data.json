@@ -11,11 +11,11 @@
     "monthlyTargetMax": 400,
     "aprIdealMax": 0,
     "aprAcceptableMax": 2,
-    "tradeValueAssumption": 15500,
+    "tradeValueAssumption": 14000,
     "cashDownAssumption": 0,
     "loanTermMonths": 72,
-    "lastUpdated": "2026-06-18",
-    "summary": "Kid-friendly SUV/crossover watchlist: Kia first, Tesla second, Sorento stretch, RAV4 if APR improves."
+    "lastUpdated": "2026-06-25",
+    "summary": "Hold strategy: keep the paid-off Corolla maintained, clear small debt first, and re-check Kia/Tesla offers after a few paychecks."
   },
   "marketPatterns": [
     {
@@ -44,53 +44,84 @@
       "rank": 1,
       "id": "kia-sportage-hybrid",
       "model": "Kia Sportage Hybrid",
-      "targetTrims": ["LX Hybrid FWD", "EX Hybrid AWD", "X-Line Hybrid AWD"],
+      "targetTrims": [
+        "LX Hybrid FWD",
+        "EX Hybrid AWD",
+        "X-Line Hybrid AWD"
+      ],
       "category": "Hybrid compact SUV",
       "preferenceRole": "Primary target",
       "msrpLow": 30490,
       "msrpHigh": 40590,
       "estimatedTargetOtd": 36500,
-      "currentAprBest": 1.9,
-      "aprStatus": "watch",
-      "dealNotes": "Some market references show Kia Sportage financing as low as 0% on selected Sportage trims and hybrid lease cash around $1k-$1.8k; verify local trim eligibility.",
+      "currentAprBest": 0,
+      "aprStatus": "green-if-qualified",
+      "dealNotes": "Refreshed 2026-06-25. Kia official public offers page is location-gated but confirms current national offer flow; Edmunds/CarsDirect June refreshes show 2026 Sportage/Sportage Hybrid support remains strong for well-qualified buyers. CarsDirect last updated 2026-06-24 lists Sportage financing as low as 0% APR for 48 months with up to $750 finance bonus, up to $3,250 cash back, and meaningful lease cash by trim: LX Hybrid FWD about $1,800, EX Hybrid AWD about $1,150, X-Line Hybrid AWD about $1,200, expiring 2026-07-06. Edmunds shows 0% APR 36/48, 0.9% 60, 2.99% 66, 3.99% 72 for 2026 Sportage gas trims through 2026-07-07; Sportage Hybrid-specific Edmunds text appears stale/region-mixed, so CarsDirect is the cleaner hybrid source. Buy signal stays green only if Kaluzy qualifies and the dealer avoids markup/protection packages.",
       "rearLegroomIn": 41.3,
       "cargoBehindSecondCuFt": 39.5,
       "cargoMaxCuFt": 73.7,
       "fuelType": "Hybrid",
       "familyFit": 95,
       "insuranceRisk": "medium-low",
-      "why": "Best blend of space, hybrid efficiency, payment realism, and preference fit.",
-      "watchTriggers": ["0%-1.9% APR for 60-72 months", "EX AWD under MSRP", "monthly estimate <= $400 after Corolla trade", "Progressive quote <= $180/month"],
-      "redFlags": ["Dealer markup", "mandatory protection package", "APR above 3%", "payment above $450"],
+      "why": "Best blend of space, hybrid efficiency, payment realism, and preference fit — but still a watch item until credit/debt position is stronger.",
+      "watchTriggers": [
+        "0%-1.9% APR for 60-72 months",
+        "EX AWD under MSRP",
+        "monthly estimate <= $400 after Corolla trade",
+        "Progressive quote <= $180/month"
+      ],
+      "redFlags": [
+        "Dealer markup",
+        "mandatory protection package",
+        "APR above 3%",
+        "payment above $450"
+      ],
       "sourceLinks": [
+        "https://www.kia.com/us/en/offers/landing",
         "https://www.kia.com/us/en/sportage-hybrid/specs-compare",
-        "https://www.carsdirect.com/kia/sportage/prices-deals"
+        "https://www.carsdirect.com/kia/sportage/prices-deals",
+        "https://www.edmunds.com/kia/sportage/2026/deals/"
       ]
     },
     {
       "rank": 2,
       "id": "tesla-model-y",
       "model": "Tesla Model Y",
-      "targetTrims": ["Model Y Rear-Wheel Drive", "Model Y All-Wheel Drive"],
+      "targetTrims": [
+        "Model Y Rear-Wheel Drive",
+        "Model Y All-Wheel Drive"
+      ],
       "category": "Electric compact/midsize SUV",
       "preferenceRole": "EV stretch / APR play",
       "msrpLow": 39990,
       "msrpHigh": 49990,
       "estimatedTargetOtd": 43500,
-      "currentAprBest": 0,
+      "currentAprBest": 0.99,
       "aprStatus": "green-if-qualified",
-      "dealNotes": "Tesla current offers show 0% APR for Model Y RWD and 0.99% for AWD/Premium for well-qualified buyers; credit score and insurance are key blockers.",
+      "dealNotes": "Refreshed with Kaluzy's Tesla configurator check: the Model Y finance screen showed about 0.99% APR with the mid-600s credit-score scenario and a 72-month-style term, before adding trade value. A $14k Corolla trade could materially reduce payment, but final approval, insurance, and exact trade offer still decide the real fit. Strong APR signal remains, but this is a hold/watch item rather than a buy-now decision.",
       "rearLegroomIn": 40.5,
       "cargoBehindSecondCuFt": 30,
       "cargoMaxCuFt": 76,
       "fuelType": "EV",
       "familyFit": 88,
       "insuranceRisk": "medium-high",
-      "why": "Best low-APR EV option; much cheaper than Model X; strong cargo and tech.",
-      "watchTriggers": ["0% APR remains active", "Progressive quote acceptable", "home charging plan is practical", "payment near $400 after trade"],
-      "redFlags": ["Insurance jumps too much", "no convenient charging", "APR unavailable at credit score", "Model X temptation"],
+      "why": "Best low-APR EV option; with a strong Corolla trade it may fit the payment range, but it stays a hold until trade value, insurance, and final approval are confirmed.",
+      "watchTriggers": [
+        "0.99% APR or better remains active",
+        "Progressive quote acceptable",
+        "home charging plan is practical",
+        "payment near $400 after trade"
+      ],
+      "redFlags": [
+        "Insurance jumps too much",
+        "no convenient charging",
+        "APR unavailable at credit score",
+        "Model X temptation"
+      ],
       "sourceLinks": [
         "https://www.tesla.com/current-offers",
+        "https://evxl.co/2026/06/05/teslas-current-offers-0-apr-free-supercharging/",
+        "https://www.carsdirect.com/tesla/model-y/prices-deals",
         "https://www.edmunds.com/tesla/model-y/"
       ]
     },
@@ -98,7 +129,10 @@
       "rank": 3,
       "id": "kia-sorento-hybrid",
       "model": "Kia Sorento Hybrid",
-      "targetTrims": ["EX Hybrid FWD", "EX Hybrid AWD"],
+      "targetTrims": [
+        "EX Hybrid FWD",
+        "EX Hybrid AWD"
+      ],
       "category": "Hybrid 3-row SUV",
       "preferenceRole": "Space stretch",
       "msrpLow": 38890,
@@ -106,7 +140,7 @@
       "estimatedTargetOtd": 43500,
       "currentAprBest": 0,
       "aprStatus": "green-but-payment-risk",
-      "dealNotes": "Market references show some Sorento offers with 0% APR for 48 months plus bonus cash and lease cash on hybrid/PHEV trims, but payment can still be high.",
+      "dealNotes": "Refreshed 2026-06-25. Kia official public offers page is location-gated but active; Edmunds June 2026 Sorento Hybrid incentives show $2,750 customer cash, lease bonus cash examples around $4,050 for 36 months / $4,400 for 48 months plus $375 select-inventory lease bonus, and special APR through 2026-07-07: 0% for 36/48 months, 0.9% for 60, 2.99% for 66, 3.49% for 72, 4.49% for 84. CarsDirect last updated 2026-06-22 lists Sorento lease cash up to $5,600 on PHEV and hybrid-specific lease cash around $3,400 FWD / $2,350 AWD, expiring 2026-07-06, plus 0% APR with up to $750 finance bonus. Rate remains excellent, but this is still a payment stretch because MSRP/OTD is much higher than Sportage.",
       "rearLegroomIn": 41.7,
       "cargoBehindSecondCuFt": 604,
       "cargoMaxCuFt": 1996,
@@ -115,26 +149,41 @@
       "familyFit": 98,
       "insuranceRisk": "medium",
       "why": "Best space, third row for kids, but payment stretch compared with Sportage.",
-      "watchTriggers": ["0%-1.9% APR", "large lease cash or dealer discount", "payment <= $425 preferred / <= $450 max", "EX trim available without markup"],
-      "redFlags": ["Top trim pushes price too high", "payment over $450", "lease mileage too low", "APR above 3%"],
+      "watchTriggers": [
+        "0%-1.9% APR",
+        "large lease cash or dealer discount",
+        "payment <= $425 preferred / <= $450 max",
+        "EX trim available without markup"
+      ],
+      "redFlags": [
+        "Top trim pushes price too high",
+        "payment over $450",
+        "lease mileage too low",
+        "APR above 3%"
+      ],
       "sourceLinks": [
+        "https://www.kia.com/us/en/offers/landing",
         "https://www.carsdirect.com/kia/sorento/prices-deals",
-        "https://www.edmunds.com/kia/sorento-hybrid/2026/deals"
+        "https://www.edmunds.com/kia/sorento-hybrid/2026/deals/"
       ]
     },
     {
       "rank": 4,
       "id": "toyota-rav4-hybrid",
       "model": "Toyota RAV4 Hybrid / new RAV4",
-      "targetTrims": ["Hybrid LE", "Hybrid XLE", "Hybrid XLE Premium"],
+      "targetTrims": [
+        "Hybrid LE",
+        "Hybrid XLE",
+        "Hybrid XLE Premium"
+      ],
       "category": "Hybrid compact SUV",
       "preferenceRole": "Design favorite / APR waitlist",
       "msrpLow": 31900,
       "msrpHigh": 42000,
       "estimatedTargetOtd": 39000,
-      "currentAprBest": 4.75,
+      "currentAprBest": 4.99,
       "aprStatus": "red-currently",
-      "dealNotes": "Toyota RAV4 APR references around 4.75%-4.99%, outside the user’s max 2% preference. Strong reliability/resale but not a buy signal right now.",
+      "dealNotes": "Refreshed 2026-06-25. Toyota's official RAV4 Hybrid deals page remains local-offer gated and did not expose a specific RAV4 Hybrid APR in extracted public text. Toyota central/dealer offer pages show 2026 RAV4 at 4.99% APR for 60 months through 2026-06-30, and separate RAV4 Plug-in Hybrid examples also show 4.99% APR for 60 months / 5.99% for 72 in some regions. This remains above Kaluzy's 3% red-flag line and far outside the <=2% preference. No meaningful Toyota buy signal unless RAV4/RAV4 Hybrid APR drops below 3%, ideally <=2%, or discounts become large enough to offset the rate.",
       "rearLegroomIn": 37.8,
       "cargoBehindSecondCuFt": 37.6,
       "cargoMaxCuFt": 69.8,
@@ -142,17 +191,34 @@
       "familyFit": 82,
       "insuranceRisk": "low-medium",
       "why": "Reliable and attractive design, but worse APR and less rear legroom than Sportage.",
-      "watchTriggers": ["APR drops below 3%, ideally <=2%", "dealer discount offsets APR", "no markup", "payment under $400"],
-      "redFlags": ["4.75%-4.99% APR", "dealer markup", "payment above $450", "paying premium just for design"],
+      "watchTriggers": [
+        "APR drops below 3%, ideally <=2%",
+        "dealer discount offsets APR",
+        "no markup",
+        "payment under $400"
+      ],
+      "redFlags": [
+        "4.75%-4.99% APR",
+        "dealer markup",
+        "payment above $450",
+        "paying premium just for design"
+      ],
       "sourceLinks": [
-        "https://www.toyota.com/deals-incentives/rav4/apr",
+        "https://www.toyota.com/deals-incentives/rav4hybrid",
+        "https://www.toyota.com/central/deals-incentives/financial-estimates-rav4?vehicles=rav4",
+        "https://www.carsdirect.com/toyota/rav4/prices-deals",
         "https://www.autonationtoyotaarapahoe.com/research/toyota-rav4-cargo-space-interior-dimensions.htm"
       ]
     }
   ],
   "lastFetchNotes": [
-    "This is a prototype snapshot, not a dealer-confirmed quote.",
-    "APR offers are often for well-qualified buyers and vary by region/trim.",
+    "Refreshed 2026-06-25 using official Tesla/Kia/Toyota public offer pages where extractable plus CarsDirect, Edmunds, Toyota regional/dealer offer pages, and Tesla current-offers coverage; no dealers were contacted and no user data was submitted.",
+    "Meaningful change vs 2026-06-22: CarsDirect now shows larger Sportage lease/cash support, including hybrid lease cash around $1,150-$1,800 by target trim plus up to $3,250 total cash back; Sportage remains the best practical buy signal if Kaluzy qualifies.",
+    "Tesla Model Y low-APR signal remains active but source snippets conflict on AWD breadth; dashboard keeps the conservative reading of 0% RWD and about 0.99% AWD/Premium until Tesla's official page exposes trim-specific APR in extractable text.",
+    "Toyota RAV4/RAV4 Hybrid remains red because public APR evidence is still around 4.99% for 60 months in regional pages, above Kaluzy's 3% red-flag line.",
+    "Personal strategy update: maintain the paid-off Corolla, clear small debt first, and avoid turning a good APR into a rushed purchase.",
+    "This is a dashboard snapshot, not a dealer-confirmed quote.",
+    "APR offers are often for well-qualified buyers and vary by region/trim; Kaluzy's current ~650 credit score may not qualify for the headline promo rates yet.",
     "Insurance must be quoted before buying because current Progressive baseline is $123/month.",
     "The cron tracker should refresh official/current offer pages twice weekly and only alert on meaningful changes."
   ]

@@ -82,6 +82,7 @@ input, select, button {
 button { cursor: pointer; background: linear-gradient(135deg, #2563eb, #16a34a); font-weight: 900; border: 0; }
 
 .profile-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; margin-bottom: 1.25rem; }
+.strategy-card { grid-column: span 2; border-color: rgba(246,195,74,.38); }
 .metric { padding: 1.15rem; display: grid; gap: .5rem; }
 .metric span, .metric small { color: var(--muted); }
 .metric strong { font-size: 1.15rem; }
@@ -143,5 +144,6 @@ footer { color: var(--muted); padding: 2rem 1rem 3rem; }
 
 @media (max-width: 560px) {
   .controls, .profile-grid, .specs, .checklist-grid { grid-template-columns: 1fr; }
+  .strategy-card { grid-column: span 1; }
   .section-heading { align-items: start; flex-direction: column; }
 }
