@@ -135,10 +135,26 @@ a:hover { text-decoration: underline; }
 .checklist-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: .7rem; margin-top: 1rem; }
 .checklist-grid label { background: rgba(255,255,255,.05); border: 1px solid var(--line); border-radius: 14px; padding: .8rem; display: flex; align-items: center; gap: .7rem; }
 .checklist-grid input { width: auto; }
+
+
+.trade-tracker { padding: 1.4rem; margin-bottom: 1.25rem; }
+.trade-header { display: grid; grid-template-columns: 1fr minmax(220px, 320px); gap: 1rem; align-items: start; }
+.trade-header p { color: var(--muted); line-height: 1.55; }
+.trade-value-box { background: rgba(55,214,122,.08); border: 1px solid rgba(55,214,122,.28); border-radius: 18px; padding: 1rem; display: grid; gap: .35rem; }
+.trade-value-box span, .trade-value-box small { color: var(--muted); }
+.trade-value-box strong { font-size: 2rem; }
+.trade-value-grid, .source-grid, .trade-rules { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .8rem; margin-top: 1rem; }
+.trade-value-card, .source-grid article { background: rgba(255,255,255,.05); border: 1px solid var(--line); border-radius: 16px; padding: .9rem; display: grid; gap: .35rem; }
+.trade-value-card span, .trade-value-card small, .trade-value-card p, .source-grid span, .source-grid p { color: var(--muted); line-height: 1.45; }
+.trade-value-card strong { font-size: 1.35rem; }
+.trade-details summary { margin-top: 1rem; }
+.trade-rules h3 { font-size: 1rem; margin: 0 0 .4rem; }
+.trade-rules ul { margin: 0; padding-left: 1.1rem; color: var(--muted); line-height: 1.55; }
+
 footer { color: var(--muted); padding: 2rem 1rem 3rem; }
 
 @media (max-width: 860px) {
-  .hero, .product-angle, .vehicle-grid { grid-template-columns: 1fr; }
+  .hero, .product-angle, .vehicle-grid, .trade-header, .trade-value-grid, .source-grid, .trade-rules { grid-template-columns: 1fr; }
   .controls, .profile-grid, .checklist-grid { grid-template-columns: 1fr 1fr; }
 }
 

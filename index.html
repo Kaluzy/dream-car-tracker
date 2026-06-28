@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Dream Car Tracker — Kaluzy</title>
-  <link rel="stylesheet" href="styles.css?v=eb18e6c" />
+  <link rel="stylesheet" href="styles.css?v=trade-tracker-1" />
 </head>
 <body>
   <header class="hero">
@@ -75,6 +75,39 @@
       </article>
     </section>
 
+    <section class="panel trade-tracker" id="tradeTrackerPanel">
+      <div class="trade-header">
+        <div>
+          <p class="eyebrow">Trade-in value tracker</p>
+          <h2>Paid-off car value watch</h2>
+          <p id="tradeTrackerSummary">Loading trade-in tracker…</p>
+        </div>
+        <div class="trade-value-box">
+          <span>Planning value</span>
+          <strong id="tradePlanningValue"></strong>
+          <small id="tradeApiStatus"></small>
+        </div>
+      </div>
+      <div id="tradeValueCards" class="trade-value-grid"></div>
+      <details class="trade-details">
+        <summary>Trusted sources + API notes</summary>
+        <div id="tradeSourceLinks" class="source-grid"></div>
+      </details>
+      <details class="trade-details">
+        <summary>Refresh checklist and alert rules</summary>
+        <div class="trade-rules">
+          <div>
+            <h3>Refresh checklist</h3>
+            <ul id="tradeRefreshChecklist"></ul>
+          </div>
+          <div>
+            <h3>Alert rules</h3>
+            <ul id="tradeAlertRules"></ul>
+          </div>
+        </div>
+      </details>
+    </section>
+
     <section class="panel product-angle">
       <div>
         <p class="eyebrow">Product thesis</p>
@@ -116,6 +149,6 @@
     <strong>Dream Car Tracker</strong> — prototype for personal use first, SaaS later. Data is a monitored snapshot, not a binding dealer quote.
   </footer>
 
-  <script src="app.js?v=eb18e6c"></script>
+  <script src="app.js?v=trade-tracker-1"></script>
 </body>
 </html>

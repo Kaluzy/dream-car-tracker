@@ -63,12 +63,12 @@
       "fuelType": "Hybrid",
       "familyFit": 95,
       "insuranceRisk": "medium-low",
-      "why": "Best blend of space, hybrid efficiency, payment realism, and preference fit — but still a watch item until credit/debt position is stronger.",
+      "why": "Best blend of space, hybrid efficiency, payment realism, and preference fit \u2014 but still a watch item until credit/debt position is stronger.",
       "watchTriggers": [
         "0%-1.9% APR for 60-72 months",
         "EX AWD under MSRP",
-        "monthly estimate <= $400 after Corolla trade",
-        "Progressive quote <= $180/month"
+        "monthly estimate <= $400 after trade",
+        "insurance quote <= $180/month"
       ],
       "redFlags": [
         "Dealer markup",
@@ -98,17 +98,17 @@
       "estimatedTargetOtd": 43500,
       "currentAprBest": 0.99,
       "aprStatus": "green-if-qualified",
-      "dealNotes": "Refreshed with Kaluzy's Tesla configurator and credit screenshots: one bureau scenario is in the low 600s while another is higher, so the dashboard now uses the lower score as the conservative planning scenario. Tesla showed about 0.99% APR in the configurator before adding trade value, but final auto-lender approval may differ from consumer VantageScore views. A $14k trade scenario could materially reduce payment, but final approval, insurance, and exact trade offer still decide the real fit. Strong APR signal remains, but this is a hold/watch item rather than a buy-now decision.",
+      "dealNotes": "Refreshed with Kaluzy's Tesla configurator and conservative credit planning: one consumer bureau scenario is lower while another is higher, so the dashboard uses the lower score as the conservative planning scenario. Tesla showed about 0.99% APR in the configurator before adding trade value, but final auto-lender approval may differ from consumer VantageScore views. A $14k trade scenario could materially reduce payment, but final approval, insurance, and exact trade offer still decide the real fit. Strong APR signal remains, but this is a hold/watch item rather than a buy-now decision.",
       "rearLegroomIn": 40.5,
       "cargoBehindSecondCuFt": 30,
       "cargoMaxCuFt": 76,
       "fuelType": "EV",
       "familyFit": 88,
       "insuranceRisk": "medium-high",
-      "why": "Best low-APR EV option; with a strong Corolla trade it may fit the payment range, but it stays a hold until trade value, insurance, and final approval are confirmed.",
+      "why": "Best low-APR EV option; with a strong trade it may fit the payment range, but it stays a hold until trade value, insurance, and final approval are confirmed.",
       "watchTriggers": [
         "0.99% APR or better remains active",
-        "Progressive quote acceptable",
+        "insurance quote acceptable",
         "home charging plan is practical",
         "payment near $400 after trade"
       ],
@@ -219,7 +219,80 @@
     "Personal strategy update: maintain the paid-off car, clear small debt first, and avoid turning a good APR into a rushed purchase.",
     "This is a dashboard snapshot, not a dealer-confirmed quote.",
     "APR offers are often for well-qualified buyers and vary by region/trim; public consumer VantageScore views can differ from auto-lender scoring, so the dashboard uses the lower visible bureau score as the conservative planning scenario.",
-    "Insurance must be quoted before buying because current Progressive baseline is $123/month.",
+    "Insurance must be quoted before buying because current private insurance baseline is approximate.",
     "The cron tracker should refresh official/current offer pages twice weekly and only alert on meaningful changes."
-  ]
+  ],
+  "tradeValueTracker": {
+    "vehicleLabel": "Paid-off compact hybrid trade-in",
+    "planningValue": 14000,
+    "targetValueMin": 14000,
+    "targetValueGood": 15500,
+    "lastUpdated": "2026-06-28",
+    "status": "manual-baseline-api-ready",
+    "apiStatus": "No private valuation API key configured. Public site does not expose API keys; licensed valuation APIs should run only in private cron/backend.",
+    "trustedSources": [
+      {
+        "name": "Kelley Blue Book",
+        "type": "consumer valuation + licensed B2B API",
+        "url": "https://www.kbb.com/car-values/",
+        "apiNotes": "KBB/Trade-In Advisor API is B2B/licensed via Cox Automotive/KBB; integrate privately if credentials are available."
+      },
+      {
+        "name": "J.D. Power / NADA",
+        "type": "consumer valuation + dealer/lender valuation reference",
+        "url": "https://www.jdpower.com/cars",
+        "apiNotes": "J.D. Power Valuation Services is licensed; use as private backend source if credentials are available."
+      },
+      {
+        "name": "Black Book",
+        "type": "wholesale/trade-in valuation data",
+        "url": "https://www.blackbook.com/vehicle-values",
+        "apiNotes": "Black Book values are enterprise/licensed; strong source for dealer-like trade value if credentials are available."
+      },
+      {
+        "name": "CarMax Instant Offer",
+        "type": "real cash offer",
+        "url": "https://www.carmax.com/sell-my-car",
+        "apiNotes": "No public valuation API for consumer use; manually capture offer or integrate only through approved partner access."
+      },
+      {
+        "name": "Carvana Sell/Trade",
+        "type": "real cash offer",
+        "url": "https://www.carvana.com/sell-my-car",
+        "apiNotes": "Partner API requires authorization; no public consumer trade-in API. Use manually or with approved partner credentials."
+      }
+    ],
+    "latestValues": [
+      {
+        "source": "Planning baseline",
+        "valueLow": 14000,
+        "valueHigh": 14000,
+        "confidence": "medium",
+        "updated": "2026-06-28",
+        "notes": "Current dashboard scenario. Replace with fresh KBB/J.D. Power/Black Book or real cash offers when available."
+      },
+      {
+        "source": "Good trade target",
+        "valueLow": 15500,
+        "valueHigh": 15500,
+        "confidence": "medium",
+        "updated": "2026-06-28",
+        "notes": "If offers reach this level, the next-car payment math becomes meaningfully better."
+      }
+    ],
+    "refreshChecklist": [
+      "Run KBB trade-in estimate",
+      "Run J.D. Power/NADA value check",
+      "Check Black Book if API/license becomes available",
+      "Get CarMax instant offer",
+      "Get Carvana sell/trade offer",
+      "Use the lowest credible value for conservative payment planning and the highest real cash offer for negotiation leverage"
+    ],
+    "alertRules": [
+      "Alert if conservative trade value drops below $13,000",
+      "Alert if any real offer is $14,000 or higher",
+      "Alert strongly if any real offer is $15,500 or higher",
+      "Alert if offer expiration is within 3 days"
+    ]
+  }
 }

@@ -1,6 +1,6 @@
 const money = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 0 });
 const percent = (n) => `${Number(n).toFixed(n % 1 ? 1 : 0)}%`;
-const APP_VERSION = 'eb18e6c';
+const APP_VERSION = 'trade-tracker-1';
 
 let state;
 
@@ -49,6 +49,37 @@ function statusFromScore(score, vehicle, paymentEstimate, profile) {
   return ['red', 'WAIT'];
 }
 
+function valueRangeText(item) {
+  if (item.valueLow === item.valueHigh) return money.format(item.valueLow);
+  return `${money.format(item.valueLow)}–${money.format(item.valueHigh)}`;
+}
+
+function renderTradeTracker(profile) {
+  const tracker = state.tradeValueTracker;
+  if (!tracker) return;
+  document.querySelector('#tradePlanningValue').textContent = money.format(profile.tradeValueAssumption || tracker.planningValue);
+  document.querySelector('#tradeApiStatus').textContent = tracker.status.replaceAll('-', ' ');
+  document.querySelector('#tradeTrackerSummary').textContent = `${tracker.vehicleLabel}. Last checked ${tracker.lastUpdated}. Target: ${money.format(tracker.targetValueMin)}+ acceptable, ${money.format(tracker.targetValueGood)}+ strong.`;
+  document.querySelector('#tradeValueCards').innerHTML = tracker.latestValues.map(item => `
+    <article class="trade-value-card">
+      <span>${item.source}</span>
+      <strong>${valueRangeText(item)}</strong>
+      <small>${item.confidence} confidence · ${item.updated}</small>
+      <p>${item.notes}</p>
+    </article>
+  `).join('');
+  document.querySelector('#tradeSourceLinks').innerHTML = tracker.trustedSources.map(source => `
+    <article>
+      <strong>${source.name}</strong>
+      <span>${source.type}</span>
+      <p>${source.apiNotes}</p>
+      <a href="${source.url}" target="_blank" rel="noreferrer">Open source</a>
+    </article>
+  `).join('');
+  document.querySelector('#tradeRefreshChecklist').innerHTML = tracker.refreshChecklist.map(item => `<li>${item}</li>`).join('');
+  document.querySelector('#tradeAlertRules').innerHTML = tracker.alertRules.map(item => `<li>${item}</li>`).join('');
+}
+
 function render() {
   const profile = { ...state.profile };
   profile.creditScoreNow = Number(document.querySelector('#creditScore').value);
@@ -62,6 +93,7 @@ function render() {
   document.querySelector('#aprRule').textContent = `Ideal ${percent(profile.aprIdealMax)}, max ${percent(profile.aprAcceptableMax)}`;
   document.querySelector('#insuranceBaseline').textContent = `~${money.format(profile.insuranceBaselineMonthly)}/mo baseline`;
   document.querySelector('#currentVehicle').textContent = profile.currentVehicle;
+  renderTradeTracker(profile);
 
   const [creditClass, creditText] = creditReadiness(profile.creditScoreNow);
 

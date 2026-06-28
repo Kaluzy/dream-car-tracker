@@ -21,6 +21,8 @@ Personalized next-car deal tracker prototype for Kaluzy.
   - Watch Closely
   - Wait
 - Includes SaaS product lessons from CarEdge, CarsDirect, Edmunds, CARFAX/manufacturer incentive pages.
+- Includes a trade-in value tracker with trusted source links for KBB, J.D. Power/NADA, Black Book, CarMax, and Carvana.
+- Keeps valuation API credentials out of the public site; licensed valuation APIs must run in private cron/backend code.
 
 ## How to run locally
 
