@@ -20,7 +20,7 @@ function aprBadge(vehicle, profile) {
 function creditReadiness(score) {
   if (score >= 720) return ['green', 'Promo-ready'];
   if (score >= 690) return ['yellow', 'Almost there'];
-  return ['yellow', 'Hold: build position'];
+  return ['yellow', 'Hold: use conservative score'];
 }
 
 function dealScore(vehicle, profile, estPayment) {
@@ -59,7 +59,7 @@ function render() {
   document.querySelector('#strategySummary').textContent = profile.summary;
   document.querySelector('#paymentTarget').textContent = `${money.format(profile.monthlyTargetMin)}–${money.format(profile.monthlyTargetMax)}/mo`;
   document.querySelector('#aprRule').textContent = `Ideal ${percent(profile.aprIdealMax)}, max ${percent(profile.aprAcceptableMax)}`;
-  document.querySelector('#insuranceBaseline').textContent = `${money.format(profile.insuranceBaselineMonthly)}/mo`;
+  document.querySelector('#insuranceBaseline').textContent = `~${money.format(profile.insuranceBaselineMonthly)}/mo baseline`;
   document.querySelector('#currentVehicle').textContent = profile.currentVehicle;
 
   const [creditClass, creditText] = creditReadiness(profile.creditScoreNow);
@@ -122,7 +122,7 @@ function render() {
   }).join('');
 
   document.querySelector('#vehicleCards').innerHTML = cards;
-  const scoreLabel = profile.creditScoreNow < 690 ? 'mid-600s credit scenario' : `${profile.creditScoreNow} credit score`;
+  const scoreLabel = profile.creditScoreNow < 690 ? `${profile.creditScoreNow} conservative credit scenario` : `${profile.creditScoreNow} credit score`;
   document.querySelector('#headlineStatus').textContent = `${creditText}: ${scoreLabel}`;
   document.querySelector('.hero-card').className = `hero-card ${creditClass}`;
 }

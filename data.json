@@ -1,11 +1,11 @@
 {
   "profile": {
     "name": "Kaluzy",
-    "zip": "DMV / local TBD",
-    "currentVehicle": "2021 Toyota Corolla Hybrid, paid off",
-    "insuranceProvider": "Progressive",
-    "insuranceBaselineMonthly": 123,
-    "creditScoreNow": 650,
+    "zip": "Local market TBD",
+    "currentVehicle": "Paid-off compact hybrid trade-in",
+    "insuranceProvider": "Current insurer",
+    "insuranceBaselineMonthly": 125,
+    "creditScoreNow": 623,
     "creditScoreTarget": 720,
     "monthlyTargetMin": 300,
     "monthlyTargetMax": 400,
@@ -13,9 +13,9 @@
     "aprAcceptableMax": 2,
     "tradeValueAssumption": 14000,
     "cashDownAssumption": 0,
-    "loanTermMonths": 72,
+    "loanTermMonths": 68,
     "lastUpdated": "2026-06-25",
-    "summary": "Hold strategy: keep the paid-off Corolla maintained, clear small debt first, and re-check Kia/Tesla offers after a few paychecks."
+    "summary": "Hold strategy: use the lower credit-bureau score as the conservative scenario, maintain the paid-off car, clear small debt first, and re-check Kia/Tesla offers after a few paychecks."
   },
   "marketPatterns": [
     {
@@ -98,7 +98,7 @@
       "estimatedTargetOtd": 43500,
       "currentAprBest": 0.99,
       "aprStatus": "green-if-qualified",
-      "dealNotes": "Refreshed with Kaluzy's Tesla configurator check: the Model Y finance screen showed about 0.99% APR with the mid-600s credit-score scenario and a 72-month-style term, before adding trade value. A $14k Corolla trade could materially reduce payment, but final approval, insurance, and exact trade offer still decide the real fit. Strong APR signal remains, but this is a hold/watch item rather than a buy-now decision.",
+      "dealNotes": "Refreshed with Kaluzy's Tesla configurator and credit screenshots: one bureau scenario is in the low 600s while another is higher, so the dashboard now uses the lower score as the conservative planning scenario. Tesla showed about 0.99% APR in the configurator before adding trade value, but final auto-lender approval may differ from consumer VantageScore views. A $14k trade scenario could materially reduce payment, but final approval, insurance, and exact trade offer still decide the real fit. Strong APR signal remains, but this is a hold/watch item rather than a buy-now decision.",
       "rearLegroomIn": 40.5,
       "cargoBehindSecondCuFt": 30,
       "cargoMaxCuFt": 76,
@@ -216,9 +216,9 @@
     "Meaningful change vs 2026-06-22: CarsDirect now shows larger Sportage lease/cash support, including hybrid lease cash around $1,150-$1,800 by target trim plus up to $3,250 total cash back; Sportage remains the best practical buy signal if Kaluzy qualifies.",
     "Tesla Model Y low-APR signal remains active but source snippets conflict on AWD breadth; dashboard keeps the conservative reading of 0% RWD and about 0.99% AWD/Premium until Tesla's official page exposes trim-specific APR in extractable text.",
     "Toyota RAV4/RAV4 Hybrid remains red because public APR evidence is still around 4.99% for 60 months in regional pages, above Kaluzy's 3% red-flag line.",
-    "Personal strategy update: maintain the paid-off Corolla, clear small debt first, and avoid turning a good APR into a rushed purchase.",
+    "Personal strategy update: maintain the paid-off car, clear small debt first, and avoid turning a good APR into a rushed purchase.",
     "This is a dashboard snapshot, not a dealer-confirmed quote.",
-    "APR offers are often for well-qualified buyers and vary by region/trim; Kaluzy's current ~650 credit score may not qualify for the headline promo rates yet.",
+    "APR offers are often for well-qualified buyers and vary by region/trim; public consumer VantageScore views can differ from auto-lender scoring, so the dashboard uses the lower visible bureau score as the conservative planning scenario.",
     "Insurance must be quoted before buying because current Progressive baseline is $123/month.",
     "The cron tracker should refresh official/current offer pages twice weekly and only alert on meaningful changes."
   ]
